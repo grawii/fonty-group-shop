@@ -112,19 +112,20 @@ function viewCategory(type, title) {
     Object.keys(groupedByNetwork).forEach(networkName => {
         const networkItems = groupedByNetwork[networkName];
         
-        // 1. สร้างหัวข้อเครือข่ายก่อน
+        // ✨ จุดสำคัญ 1: สร้าง ID แบบใช้ขีดแทนช่องว่าง
+        const cleanId = networkName.replace(/\s+/g, '-');
+        
         const networkHeaderHTML = `
             <div class="network-group flex flex-col gap-y-6">
                 <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
                     <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">${networkName}</h2>
                 </div>
-                <div id="items-${networkName.replace(/\s+/g, '-')}" class="flex flex-col gap-y-8"></div>
-            </div>
-        `;
+                <div id="items-${cleanId}" class="flex flex-col gap-y-8"></div>
+            </div>`;
         catDiv.insertAdjacentHTML('beforeend', networkHeaderHTML);
 
-        // 2. ดึงคอนเทนเนอร์ที่เพิ่งสร้างออกมาวางหมวดย่อย
-        const networkContainer = document.getElementById(`items-${networkName.replace(/\s+/g, '')}`);
+        // ✨ จุดสำคัญ 2: ดึง ID ตัวเดิมมาใช้สินค้าเข้าตะกร้า
+        const networkContainer = document.getElementById(`items-${cleanId}`);
         const subCatsInNetwork = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ', 'ลายน้ำ', 'BG', 'ไฟล์ตกแต่ง', 'อื่น ๆ', 'group'];
         
         subCatsInNetwork.forEach(subName => {
@@ -149,9 +150,8 @@ function viewCategory(type, title) {
                         <div class="grid grid-cols-2 gap-4 px-1">
                             ${displayItems.map(p => createHTML(p)).join('')}
                         </div>
-                    </div>
-                `;
-                networkContainer.insertAdjacentHTML('beforeend', subSectionHTML);
+                    </div>`;
+                if(networkContainer) networkContainer.insertAdjacentHTML('beforeend', subSectionHTML);
             }
         });
     });
@@ -159,7 +159,6 @@ function viewCategory(type, title) {
     lucide.createIcons();
     initProductSliders();
 }
-
 
 function renderContactInfo() {
     const div = document.getElementById('contact-list');
