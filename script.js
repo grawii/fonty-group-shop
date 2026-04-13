@@ -208,18 +208,16 @@ function renderHomeContent() {
     if (categorySection) {
         const cats = [
             { id: 'all', name: 'ฟอนต์ทั้งหมด', icon: 'type', navIdx: 1 },
-            { id: 'group', name: 'กลุ่มฟอนต์ & ของตกแต่ง', icon: 'users', navIdx: 2 }, // ✨ เปลี่ยนจาก 2 เป็น 2 (เช็กให้ตรงกับตำแหน่ง Groups ใน Nav)
+            { id: 'group', name: 'กลุ่มฟอนต์ & ของตกแต่ง', icon: 'users', navIdx: 2 }, 
             { id: 'brush', name: 'บรัช & อื่นๆ', icon: 'paintbrush', navIdx: 3 }
         ];
         categorySection.innerHTML = cats.map(cat => {
-            const filtered = cat.id === 'all' 
-                ? products 
-                : products.filter(p => {
-                    // ✨ แก้จุดนี้: ให้ดึงจาก Tag 'กลุ่ม' เท่านั้น
-                    if (cat.id === 'group') return p.tags && p.tags.includes('group');
-                    if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
-                    return false;
-                });
+            const filtered = products.filter(p => { // ✨ ไอวี่ปรับวิธี Filter ให้คลีนขึ้น
+                if (cat.id === 'all') return true;
+                if (cat.id === 'group') return p.tags && p.tags.includes('group');
+                if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
+                return false;
+            });
                 
             if (filtered.length === 0) return '';
             return `
