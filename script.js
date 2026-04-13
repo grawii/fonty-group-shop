@@ -89,8 +89,10 @@ function viewCategory(type, title) {
         baseProducts = products;
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
-    } else if (type === 'group') {
-        baseProducts = products.filter(p => p.tags && (p.tags.includes('ไฟล์ตกแต่ง') || p.tags.includes('BG')));
+// ตรงฟังก์ชัน viewCategory
+} else if (type === 'group') {
+    // ✨ แก้ให้ดึงเฉพาะ Tag 'กลุ่ม' เท่านั้น สินค้า BG กับ ไฟล์ตกแต่ง จะได้ไม่มาปน
+    baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
     } else if (type === 'brush') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
@@ -204,7 +206,8 @@ function renderHomeContent() {
 const filtered = cat.id === 'all' 
     ? products 
     : products.filter(p => {
-        if (cat.id === 'group') return p.tags && (p.tags.includes('ไฟล์ตกแต่ง') || p.tags.includes('BG'));
+// หาบรรทัดที่เช็ก cat.id === 'group'
+        if (cat.id === 'group') return p.tags && p.tags.includes('กลุ่ม');
         if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
         return false;
     });
