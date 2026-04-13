@@ -132,7 +132,23 @@ const banners = [
             { id: 'gmc10', name: 'ฮายเลิฟลี่ (GMC HiLovely)', price: 89, oldPrice: 199, detail: 'รวมชพณ.', img: ['https://img1.pic.in.th/images/A78798E4-3103-4348-BE2D-1F5369C5CEBE.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'gmc11', name: 'ฮายเพอร่า (GMC HiPerra)', price: 89, oldPrice: 199, detail: 'รวมชพณ.', img: ['https://img2.pic.in.th/186D1697-BC78-4B4D-BA03-E4F506764A71.jpeg'], tags: ['ฟอนต์หัวข้อ'] }
         ]},
-        { id: 'cat10', name: 'ฟอนต์เครือ KT', products: [
+		    { id: 'cat10', name: 'ฟอนต์เครือ Kirakira', products: [
+            { id: 'kr1', name: 'มนตรา (GRP Mantra)', price: 89, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', isRecommend : true, badge: {text: 'Recommend', type: 'red'}, img: 'https://img1.pic.in.th/images/IMG_4602.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr2', name: 'ไฮสคูล (GRP High School)', price: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/Untitled88_20260325211524.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr3', name: 'คุ๊กกี้ (GRP Cookie)', price: 39, oldPrice: 59, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img1.pic.in.th/images/Untitled89_20260325213137.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr4', name: 'PuffyPop (GRP PuffyPop)', price: 99, oldPrice: 169, detail: 'มี 2 ไฟล์ (ปกติ/โปร่ง)', img: 'https://img1.pic.in.th/images/IMG_3011.jpeg', tags: ['ฟอนต์เนื้อหา', 'ฟอนต์หัวข้อ'] },
+            { id: 'kr5', name: 'โมจิปัง (GRP MochiPung)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/IMG_4604f4cbfa878d2d0190.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr6', name: 'เล่าเรื่อง (GRP StoryTelling)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)',badge: {text: 'New', type: 'red'}, img: 'https://img2.pic.in.th/Untitled82_20260325195517.png', tags: ['ฟอนต์เนื้อหา'] }
+        ]},
+		    { id: 'cat11', name: 'ฟอนต์เครือ Potato Bear', products: [
+            { id: 'ptt1', name: 'มนตรา (GRP Mantra)', price: 89, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', isRecommend : true, badge: {text: 'Recommend', type: 'red'}, img: 'https://img1.pic.in.th/images/IMG_4602.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt2', name: 'ไฮสคูล (GRP High School)', price: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/Untitled88_20260325211524.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt3', name: 'คุ๊กกี้ (GRP Cookie)', price: 39, oldPrice: 59, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img1.pic.in.th/images/Untitled89_20260325213137.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt4', name: 'PuffyPop (GRP PuffyPop)', price: 99, oldPrice: 169, detail: 'มี 2 ไฟล์ (ปกติ/โปร่ง)', img: 'https://img1.pic.in.th/images/IMG_3011.jpeg', tags: ['ฟอนต์เนื้อหา', 'ฟอนต์หัวข้อ'] },
+            { id: 'ptt5', name: 'โมจิปัง (GRP MochiPung)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/IMG_4604f4cbfa878d2d0190.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt6', name: 'เล่าเรื่อง (GRP StoryTelling)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)',badge: {text: 'New', type: 'red'}, img: 'https://img2.pic.in.th/Untitled82_20260325195517.png', tags: ['ฟอนต์เนื้อหา'] }
+        ]},
+        { id: 'cat12', name: 'ฟอนต์เครือ KT', products: [
             { id: 'kt1', name: 'บัลเดอร์ (AM Balder)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/06E02B71-90EC-4ABB-B1D5-B16D571E69A1.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kt2', name: 'ซันเดย์ (AM Sunday)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/D1E3E059-CE9D-4BB4-8D44-C0FEB86C1F30.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kt3', name: 'เรนเจอร์ (AM Ranger)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/CF5D39C1-27F2-40C7-A907-FFB7BAF60226.jpeg', tags: ['ฟอนต์เนื้อหา'] },
@@ -141,7 +157,7 @@ const banners = [
             { id: 'kt6', name: 'เทียนหอม (AM Tianhom)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/2A111247-4E6E-44D7-85D7-529D69471666.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kt7', name: 'โอลิเวีย (AM Olivia)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/4B64ED71-2998-458E-9EDE-9C2962DDE825.jpeg', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-        { id: 'cat11', name: 'ฟอนต์เครือ ST', products: [
+        { id: 'cat13', name: 'ฟอนต์เครือ ST', products: [
             { id: 'st1', name: 'บัลเดอร์ (AM Balder)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/06E02B71-90EC-4ABB-B1D5-B16D571E69A1.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'st2', name: 'ซันเดย์ (AM Sunday)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/D1E3E059-CE9D-4BB4-8D44-C0FEB86C1F30.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'st3', name: 'เรนเจอร์ (AM Ranger)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/CF5D39C1-27F2-40C7-A907-FFB7BAF60226.jpeg', tags: ['ฟอนต์เนื้อหา'] },
@@ -150,7 +166,7 @@ const banners = [
             { id: 'st6', name: 'เทียนหอม (AM Tianhom)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/2A111247-4E6E-44D7-85D7-529D69471666.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'st7', name: 'โอลิเวีย (AM Olivia)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/4B64ED71-2998-458E-9EDE-9C2962DDE825.jpeg', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-        { id: 'cat12', name: 'ฟอนต์เครือ TAU', products: [
+        { id: 'cat14', name: 'ฟอนต์เครือ TAU', products: [
             { id: 'tau1', name: 'บัลเดอร์ (AM Balder)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/06E02B71-90EC-4ABB-B1D5-B16D571E69A1.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'tau2', name: 'ซันเดย์ (AM Sunday)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/D1E3E059-CE9D-4BB4-8D44-C0FEB86C1F30.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'tau3', name: 'เรนเจอร์ (AM Ranger)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/CF5D39C1-27F2-40C7-A907-FFB7BAF60226.jpeg', tags: ['ฟอนต์เนื้อหา'] },
@@ -159,7 +175,7 @@ const banners = [
             { id: 'tau6', name: 'เทียนหอม (AM Tianhom)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/2A111247-4E6E-44D7-85D7-529D69471666.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'tau7', name: 'โอลิเวีย (AM Olivia)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/4B64ED71-2998-458E-9EDE-9C2962DDE825.jpeg', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-        { id: 'cat13', name: 'ฟอนต์เครือ Chalihouse', products: [
+        { id: 'cat15', name: 'ฟอนต์เครือ Chalihouse', products: [
             { id: 'cl1', name: 'บัลเดอร์ (AM Balder)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/06E02B71-90EC-4ABB-B1D5-B16D571E69A1.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'cl2', name: 'ซันเดย์ (AM Sunday)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/D1E3E059-CE9D-4BB4-8D44-C0FEB86C1F30.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'cl3', name: 'เรนเจอร์ (AM Ranger)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/CF5D39C1-27F2-40C7-A907-FFB7BAF60226.jpeg', tags: ['ฟอนต์เนื้อหา'] },
@@ -168,7 +184,7 @@ const banners = [
             { id: 'cl6', name: 'เทียนหอม (AM Tianhom)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/2A111247-4E6E-44D7-85D7-529D69471666.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'cl7', name: 'โอลิเวีย (AM Olivia)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/4B64ED71-2998-458E-9EDE-9C2962DDE825.jpeg', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-        { id: 'cat14', name: 'ฟอนต์เครือ MysissHouse', products: [
+        { id: 'cat16', name: 'ฟอนต์เครือ MysissHouse', products: [
             { id: 'ms1', name: 'Mochi Soft (LKT Mochi Soft)', price: 299, detail: 'มีคลิปสอนแต่งหัวป้ายแถมให้‼️', img: ['https://img1.pic.in.th/images/-458_20260206201301.png', 'https://img1.pic.in.th/images/-258_20251226180828.png'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ms2', name: 'Rochy (LKT Rochy)', price: 199, detail: 'มีคลิปสอนแต่งหัวป้ายแถมให้‼️', badge: {text: 'Recommend', type: 'red'}, img: ['https://img2.pic.in.th/-393_20260115175306.png', 'https://img1.pic.in.th/images/-393_20260115175819.png'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ms3', name: 'Feather (LKT Feather)', price: 99, oldPrice: 159, detail: 'รวมชพณ.', img: 'https://img2.pic.in.th/-530_20260226002912.png', tags: ['ฟอนต์เนื้อหา'] },
