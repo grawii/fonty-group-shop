@@ -84,22 +84,25 @@ function viewCategory(type, title) {
     catDiv.className = "space-y-10 w-full"; 
 
     let baseProducts = [];
-    // ... (ส่วนการเลือก baseProducts เหมือนเดิมที่คุณองุ่นมี) ...
-    if (type === 'all' || type === 'font') {
-        baseProducts = products;
+    
+    // ✨ ส่วนที่ไอวี่แก้ให้ใหม่: ตัดส่วนที่เขียนซ้ำออกและจัดปีกกาให้ถูก
     if (type === 'all' || type === 'font') {
         baseProducts = products;
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
-    } else if (type === 'group') { // ✨ เช็กให้แน่ใจว่ามี } ปิดข้างบนก่อนเริ่ม else if อันนี้
+    } else if (type === 'group') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
-    } else if (type === 'brush') {
-    // ✨ แก้ให้ดึงเฉพาะ Tag 'กลุ่ม' เท่านั้น สินค้า BG กับ ไฟล์ตกแต่ง จะได้ไม่มาปน
-    baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
     } else if (type === 'brush') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
-        const tagMap = { 'head': 'ฟอนต์หัวข้อ', 'body': 'ฟอนต์เนื้อหา', 'emoji': 'ฟอนต์อิโมจิ', 'watermark': 'ลายน้ำ', 'bg': 'BG', 'decoration': 'ไฟล์ตกแต่ง' };
+        const tagMap = { 
+            'head': 'ฟอนต์หัวข้อ', 
+            'body': 'ฟอนต์เนื้อหา', 
+            'emoji': 'ฟอนต์อิโมจิ', 
+            'watermark': 'ลายน้ำ', 
+            'bg': 'BG', 
+            'decoration': 'ไฟล์ตกแต่ง' 
+        };
         const targetTag = tagMap[type] || type;
         baseProducts = products.filter(p => p.tags && p.tags.includes(targetTag));
     }
@@ -129,9 +132,8 @@ function viewCategory(type, title) {
         subCatsInNetwork.forEach(subName => {
             const subItems = networkItems.filter(p => p.tags && p.tags.includes(subName));
             if (subItems.length > 0) {
-                // ✨ จุดสำคัญ: ใช้ .slice(0, 4) เพื่อโชว์แค่ 4 ชิ้นแรก
                 const displayItems = subItems.slice(0, 4); 
-                const hasMore = subItems.length > 4; // เช็กว่ามีมากกว่า 4 ไหม
+                const hasMore = subItems.length > 4;
 
                 const subSection = `
                     <div class="sub-category space-y-4">
