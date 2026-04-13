@@ -240,11 +240,18 @@ const banners = [
 const subCats = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ','ลายน้ำ','BG','ไฟล์ตกแต่ง','อื่น ๆ'];
 
 // 4. ✨ จุดสำคัญ: แปลงข้อมูลเพื่อให้ระบบเดิมใช้งานได้ (วางบรรทัดนี้ล่างสุด)
-const products = categories.flatMap(cat => 
-    cat.products.map(p => ({ 
-        ...p, 
-        categoryName: cat.name,
-        // แปลงค่า isRecommend ให้ตรงกับที่ระบบเก่าใช้ (ถ้ามี)
-        isRecommended: p.isRecommend || false 
-    }))
-);
+// ลบของเก่าออกให้หมด แล้ววางอันนี้ท้ายไฟล์ products.js แทนค่ะ
+const products = categories.flatMap(cat => {
+    return cat.products.map(p => {
+        return {
+            ...p,
+            categoryName: cat.name,
+            isRecommended: p.isRecommend || false,
+            // ✨ บังคับใส่ Type ให้มันเลย จะได้ไม่งง
+            type: cat.id === 'cat_group' ? 'group' : 'font'
+        };
+    });
+});
+
+// เช็กว่ามีบรรทัดนี้ไหม ถ้าไม่มีต้องเติมนะคะ
+console.log("โหลดสินค้าสำเร็จจำนวน:", products.length, "ชิ้น");
