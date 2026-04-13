@@ -176,120 +176,38 @@ const banners = [
         ]}, // <--- องุ่นใส่ปีกกาปิดเครือที่ 14 ให้แล้ว
 
         { id: 'cat_watermark', name: '🎨 รวมลายน้ำ', products: [
-            { 
-                id: 'wm_01', 
-                name: 'Set ลายน้ำมินิมอล 01', 
-                price: 39, 
-                img: 'https://img2.pic.in.th/wm_example1.png', 
-                tags: ['ลายน้ำ'], 
-                isRecommend: true 
-            },
-            { 
-                id: 'wm_02', 
-                name: 'Set ลายน้ำพาสเทล 02', 
-                price: 39, 
-                img: 'https://img2.pic.in.th/wm_example2.png', 
-                tags: ['ลายน้ำ'] 
-            }
+            { id: 'wm_01', name: 'Set ลายน้ำมินิมอล 01', price: 39, img: 'https://img2.pic.in.th/wm_example1.png', tags: ['ลายน้ำ'], isRecommend: true },
+            { id: 'wm_02', name: 'Set ลายน้ำพาสเทล 02', price: 39, img: 'https://img2.pic.in.th/wm_example2.png', tags: ['ลายน้ำ'] }
         ]}, // <--- ปิดเครือลายน้ำ
 
 // เปลี่ยนจาก: หมวดบรัชและของตกแต่ง
 // เป็นชื่อที่ไม่มีคำว่า "ตกแต่ง" หรือ "อื่น ๆ" เช่น:
-        { 
-            id: 'cat_brush', 
-            name: '🖌️ บรัช iBisPaint', 
-            products: [ 
-                { 
-                    id: 'br_01', 
-                    name: 'บรัชหัวใจฟุ้งฟิ้ง', 
-                    price: 59, 
-                    img: 'https://...', 
-                    tags: ['อื่น ๆ'] 
-                }
+        { id: 'cat_brush', name: '🖌️ บรัช iBisPaint', products: [ 
+                { id: 'br_01', name: 'บรัชหัวใจฟุ้งฟิ้ง', price: 59, img: 'https://...', tags: ['อื่น ๆ'] }
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
-        { 
-            id: 'cat_brush2', 
-            name: '🖌️ บรัช Procreate', 
-            products: [ 
-                { 
-                    id: 'br_02', 
-                    name: 'บรัชหัวใจฟุ้งฟิ้ง', 
-                    price: 59, 
-                    img: 'https://...', 
-                    tags: ['อื่น ๆ'] 
-}
+        { id: 'cat_brush2', name: '🖌️ บรัช Procreate', products: [ 
+                { id: 'br_02', name: 'บรัชหัวใจฟุ้งฟิ้ง', price: 59, img: 'https://...', tags: ['อื่น ๆ'] }
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
-        { 
-            id: 'cat_stickerchat', 
-            name: '💬 สติ๊กเกอร์แชท', 
-            products: [ 
-                { 
-                    id: 'stk_01', 
-                    name: 'สติ๊กเกอร์พี่จ่าง 01', 
-                    price: 59, 
-                    img: 'https://img2.pic.in.th/c468559163858e02c5d7de1a0e345dec.jpeg', 
-                    tags: ['อื่น ๆ'] 
-                },
-				{ 
-                    id: 'stk_02', 
-                    name: 'สติ๊กเกอร์พี่จ่าง 02', 
-                    price: 59, 
-                    img: 'https://img1.pic.in.th/images/c6a681ee24e2fee4839a5bd04d17fd79.jpeg', 
-                    tags: ['อื่น ๆ'] 
-                },
-				{ 
-                    id: 'stk_03', 
-                    name: 'สติ๊กเกอร์พี่จ่าง 03', 
-                    price: 59, 
-                    img: ['https://img2.pic.in.th/81c7ff5d2a6943b2a6bcb93bb46b9d8c.jpeg','https://img1.pic.in.th/images/879ffcc0fd9ee11f4a9ccd992eb2471d.jpeg'], 
-                    tags: ['อื่น ๆ'] 
-			    },
-				{ 
-                    id: 'stk_04', 
-                    name: 'สติ๊กเกอร์พี่จ่าง 04', 
-                    price: 59, 
-                    img: ['https://img1.pic.in.th/images/cfc66fd36dcade9c77182d5e0a328b48.jpeg','https://img2.pic.in.th/522d3ca24054361fa370034de121784e.jpeg'], 
-                    tags: ['อื่น ๆ'] 
-			    },
-				{ 
-                    id: 'stk_05', 
-                    name: 'สติ๊กเกอร์พี่จ่าง 05', 
-                    price: 39, 
-                    img: ['https://img2.pic.in.th/a799182e121ef3d2b3af2dab163352eb.jpeg','https://img1.pic.in.th/images/f37dd0d811bddce1ea4fc3598bb70406.jpeg'], 
-                    tags: ['อื่น ๆ'] 
-                }
+        { id: 'cat_stickerchat', name: '💬 สติ๊กเกอร์แชท', products: [ 
+                { id: 'stk_01', name: 'สติ๊กเกอร์พี่จ่าง 01', price: 59, img: 'https://img2.pic.in.th/c468559163858e02c5d7de1a0e345dec.jpeg', tags: ['อื่น ๆ'] },
+				{ id: 'stk_02', name: 'สติ๊กเกอร์พี่จ่าง 02', price: 59, img: 'https://img1.pic.in.th/images/c6a681ee24e2fee4839a5bd04d17fd79.jpeg', tags: ['อื่น ๆ'] },
+				{ id: 'stk_03', name: 'สติ๊กเกอร์พี่จ่าง 03', price: 59, img: ['https://img2.pic.in.th/81c7ff5d2a6943b2a6bcb93bb46b9d8c.jpeg','https://img1.pic.in.th/images/879ffcc0fd9ee11f4a9ccd992eb2471d.jpeg'], tags: ['อื่น ๆ'] },
+				{ id: 'stk_04', name: 'สติ๊กเกอร์พี่จ่าง 04', price: 59, img: ['https://img1.pic.in.th/images/cfc66fd36dcade9c77182d5e0a328b48.jpeg','https://img2.pic.in.th/522d3ca24054361fa370034de121784e.jpeg'], tags: ['อื่น ๆ'] },
+				{ id: 'stk_05', name: 'สติ๊กเกอร์พี่จ่าง 05', price: 39, img: ['https://img2.pic.in.th/a799182e121ef3d2b3af2dab163352eb.jpeg','https://img1.pic.in.th/images/f37dd0d811bddce1ea4fc3598bb70406.jpeg'], tags: ['อื่น ๆ'] }
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
-        { 
-            id: 'cat_decoration', 
-            name: '🩷 ไฟล์ตกแต่ง', 
-            products: [ 
-                { 
-                    id: 'deco_01', 
-                    name: 'สติ๊กเกอร์น้องหมี', 
-                    price: 49, 
-                    img: 'https://...', 
-                    tags: ['ไฟล์ตกแต่ง'] 
-                }
+        { id: 'cat_decoration', name: '🩷 ไฟล์ตกแต่ง', products: [ 
+                { id: 'deco_01', name: 'สติ๊กเกอร์น้องหมี', price: 49, img: 'https://...', tags: ['ไฟล์ตกแต่ง'] }
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
-        { 
-            id: 'cat_bg', 
-            name: '🩷 BG', 
-            products: [ 
-                { 
-                    id: 'bg_01', 
-                    name: 'สติ๊กเกอร์น้องหมี', 
-                    price: 49, 
-                    img: 'https://...', 
-                    tags: ['BG'] 
-                }
+        { id: 'cat_bg', name: '🩷 BG', products: [ 
+                { id: 'bg_01', name: 'สติ๊กเกอร์น้องหมี', price: 49, img: 'https://...', tags: ['BG'] }
             ]
         } // <--- ปิดเครือสุดท้าย
 
