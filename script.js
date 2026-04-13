@@ -81,7 +81,9 @@ function viewCategory(type, title) {
     if (!catDiv) return;
 
     catDiv.innerHTML = '';
-    
+    // ใช้ flex-col เพื่อให้การ์ดไม่ขยายใหญ่จนเต็มจอ และจัดการพื้นหลังให้เนียน
+    catDiv.className = "flex flex-col gap-y-10 w-full pb-20"; 
+
     let baseProducts = [];
     if (type === 'all' || type === 'font') {
         baseProducts = products;
@@ -92,38 +94,71 @@ function viewCategory(type, title) {
     } else if (type === 'brush') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
-        const tagMap = { 'head': 'ฟอนต์หัวข้อ', 'body': 'ฟอนต์เนื้อหา', 'emoji': 'ฟอนต์อิโมจิ', 'watermark': 'ลายน้ำ', 'bg': 'BG', 'decoration': 'ไฟล์ตกแต่ง' };
+        const tagMap = { 
+            'head': 'ฟอนต์หัวข้อ', 'body': 'ฟอนต์เนื้อหา', 'emoji': 'ฟอนต์อิโมจิ', 
+            'watermark': 'ลายน้ำ', 'bg': 'BG', 'decoration': 'ไฟล์ตกแต่ง',
+            'brush-ibis': 'อื่น ๆ', 'brush-pro': 'อื่น ๆ', 'sticker': 'อื่น ๆ'
+        };
         const targetTag = tagMap[type] || type;
         baseProducts = products.filter(p => p.tags && p.tags.includes(targetTag));
     }
 
-    // ✨ จุดที่แก้: ถ้าเป็นหมวด Group หรือหมวดที่ไม่ใช่ฟอนต์ ให้โชว์แบบ Grid ปกติเลย
-    if (type === 'group' || type === 'brush' || type === 'watermark') {
-        catDiv.className = "flex flex-col gap-y-6 w-full pb-10"; 
-        catDiv.innerHTML = baseProducts.map(p => createHTML(p)).join('');
-    } else {
-        // หมวดฟอนต์ ให้จัดกลุ่มตามเครือเหมือนเดิม
-        catDiv.className = "space-y-10 w-full";
-        const groupedByNetwork = baseProducts.reduce((acc, p) => {
-            const network = p.categoryName || 'อื่นๆ';
-            if (!acc[network]) acc[network] = [];
-            acc[network].push(p);
-            return acc;
-        }, {});
+    // จัดกลุ่มตามเครือ (Network) เพื่อให้ปุ่ม "ดูเพิ่มเติม" ทำงานได้
+    const groupedByNetwork = baseProducts.reduce((acc, p) => {
+        const network = p.categoryName || 'อื่นๆ';
+        if (!acc[network]) acc[network] = [];
+        acc[network].push(p);
+        return acc;
+    }, {});
 
-        Object.keys(groupedByNetwork).forEach(networkName => {
-            const networkItems = groupedByNetwork[networkName];
-            const networkHeader = `
-                <div class="network-group flex flex-col gap-y-4"> <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
-                        <h2 class="text-lg font-black text-purple-900 uppercase">${networkName}</h2>
+    Object.keys(groupedByNetwork).forEach(networkName => {
+        const networkItems = groupedByNetwork[networkName];
+        
+        // กำหนดชื่อหมวดย่อยที่จะโชว์ในเครือ
+        const subCatsInNetwork = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ', 'ลายน้ำ', 'BG', 'ไฟล์ตกแต่ง', 'อื่น ๆ', 'group'];
+        
+        const networkHeader = `
+            <div class="network-group flex flex-col gap-y-6">
+                <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
+                    <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">${networkName}</h2>
+                </div>
+                <div id="items-${networkName.replace(/\s+/g, '')}" class="flex flex-col gap-y-8"></div>
+            </div>
+        `;
+        catDiv.insertAdjacentHTML('beforeend', networkHeader);
+        const networkContainer = document.getElementById(`items-${networkName.replace(/\s+/g, '')}`);
+
+        subCatsInNetwork.forEach(subName => {
+            // กรองสินค้าตามหมวดย่อยในเครือข่ายนั้นๆ
+            const subItems = networkItems.filter(p => p.tags && p.tags.includes(subName));
+            
+            if (subItems.length > 0) {
+                const displayItems = subItems.slice(0, 4); // โชว์แค่ 4 ชิ้นแรก
+                const hasMore = subItems.length > 4;
+
+                const subSection = `
+                    <div class="sub-category flex flex-col gap-y-4">
+                        <div class="flex items-center justify-between px-2">
+                            <div class="flex items-center gap-2 bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100 shadow-sm">
+                                <i data-lucide="folder" class="w-3.5 h-3.5 text-purple-400"></i>
+                                <span class="text-[11px] font-black text-purple-500 uppercase">หมวด ${subName === 'group' ? 'กลุ่ม VIP' : subName}</span>
+                            </div>
+                            ${hasMore ? `
+                            <button onclick="viewSubCategory('${networkName}', '${subName}')" 
+                                class="text-[9px] font-black text-purple-500 bg-white border-2 border-purple-100 px-3 py-1.5 rounded-2xl shadow-sm active:scale-90 transition-all">
+                                ดูทั้งหมด (${subItems.length}) ✨
+                            </button>` : ''}
+                        </div>
+                        <div class="grid grid-cols-2 gap-4 px-1">
+                            ${displayItems.map(p => createHTML(p)).join('')}
+                        </div>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        ${networkItems.map(p => createHTML(p)).join('')}
-                    </div>
-                </div>`;
-            catDiv.insertAdjacentHTML('beforeend', networkHeader);
+                `;
+                networkContainer.insertAdjacentHTML('beforeend', subSection);
+            }
         });
-    }
+    });
+
     lucide.createIcons();
     initProductSliders();
 }
