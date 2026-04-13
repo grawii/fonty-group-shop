@@ -99,7 +99,7 @@ function viewCategory(type, title) {
 
     // ✨ จุดที่แก้: ถ้าเป็นหมวด Group หรือหมวดที่ไม่ใช่ฟอนต์ ให้โชว์แบบ Grid ปกติเลย
     if (type === 'group' || type === 'brush' || type === 'watermark') {
-        catDiv.className = "grid grid-cols-2 gap-4 pt-4";
+        catDiv.className = "flex flex-col gap-y-6 w-full pb-10"; 
         catDiv.innerHTML = baseProducts.map(p => createHTML(p)).join('');
     } else {
         // หมวดฟอนต์ ให้จัดกลุ่มตามเครือเหมือนเดิม
@@ -114,8 +114,7 @@ function viewCategory(type, title) {
         Object.keys(groupedByNetwork).forEach(networkName => {
             const networkItems = groupedByNetwork[networkName];
             const networkHeader = `
-                <div class="network-group space-y-6">
-                    <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
+                <div class="network-group flex flex-col gap-y-4"> <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
                         <h2 class="text-lg font-black text-purple-900 uppercase">${networkName}</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
