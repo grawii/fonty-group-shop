@@ -81,7 +81,6 @@ function viewCategory(type, title) {
     if (!catDiv) return;
 
     catDiv.innerHTML = '';
-    // ใช้ flex-col เพื่อให้การ์ดไม่ขยายใหญ่จนเต็มจอ และจัดการพื้นหลังให้เนียน
     catDiv.className = "flex flex-col gap-y-10 w-full pb-20"; 
 
     let baseProducts = [];
@@ -103,7 +102,6 @@ function viewCategory(type, title) {
         baseProducts = products.filter(p => p.tags && p.tags.includes(targetTag));
     }
 
-    // จัดกลุ่มตามเครือ (Network) เพื่อให้ปุ่ม "ดูเพิ่มเติม" ทำงานได้
     const groupedByNetwork = baseProducts.reduce((acc, p) => {
         const network = p.categoryName || 'อื่นๆ';
         if (!acc[network]) acc[network] = [];
@@ -114,29 +112,28 @@ function viewCategory(type, title) {
     Object.keys(groupedByNetwork).forEach(networkName => {
         const networkItems = groupedByNetwork[networkName];
         
-        // กำหนดชื่อหมวดย่อยที่จะโชว์ในเครือ
-        const subCatsInNetwork = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ', 'ลายน้ำ', 'BG', 'ไฟล์ตกแต่ง', 'อื่น ๆ', 'group'];
-        
-        const networkHeader = `
+        // 1. สร้างหัวข้อเครือข่ายก่อน
+        const networkHeaderHTML = `
             <div class="network-group flex flex-col gap-y-6">
                 <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
                     <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">${networkName}</h2>
                 </div>
-                <div id="items-${networkName.replace(/\s+/g, '')}" class="flex flex-col gap-y-8"></div>
+                <div id="items-${networkName.replace(/\s+/g, '-')}" class="flex flex-col gap-y-8"></div>
             </div>
         `;
-        catDiv.insertAdjacentHTML('beforeend', networkHeader);
-        const networkContainer = document.getElementById(`items-${networkName.replace(/\s+/g, '')}`);
+        catDiv.insertAdjacentHTML('beforeend', networkHeaderHTML);
 
+        // 2. ดึงคอนเทนเนอร์ที่เพิ่งสร้างออกมาวางหมวดย่อย
+        const networkContainer = document.getElementById(`items-${networkName.replace(/\s+/g, '')}`);
+        const subCatsInNetwork = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ', 'ลายน้ำ', 'BG', 'ไฟล์ตกแต่ง', 'อื่น ๆ', 'group'];
+        
         subCatsInNetwork.forEach(subName => {
-            // กรองสินค้าตามหมวดย่อยในเครือข่ายนั้นๆ
             const subItems = networkItems.filter(p => p.tags && p.tags.includes(subName));
-            
             if (subItems.length > 0) {
-                const displayItems = subItems.slice(0, 4); // โชว์แค่ 4 ชิ้นแรก
+                const displayItems = subItems.slice(0, 4);
                 const hasMore = subItems.length > 4;
 
-                const subSection = `
+                const subSectionHTML = `
                     <div class="sub-category flex flex-col gap-y-4">
                         <div class="flex items-center justify-between px-2">
                             <div class="flex items-center gap-2 bg-purple-50 px-4 py-1.5 rounded-full border border-purple-100 shadow-sm">
@@ -154,7 +151,7 @@ function viewCategory(type, title) {
                         </div>
                     </div>
                 `;
-                networkContainer.insertAdjacentHTML('beforeend', subSection);
+                networkContainer.insertAdjacentHTML('beforeend', subSectionHTML);
             }
         });
     });
@@ -162,6 +159,7 @@ function viewCategory(type, title) {
     lucide.createIcons();
     initProductSliders();
 }
+
 
 function renderContactInfo() {
     const div = document.getElementById('contact-list');
