@@ -85,7 +85,7 @@ function viewCategory(type, title) {
 
     let baseProducts = [];
     
-    // ✨ ส่วนที่ไอวี่แก้ให้ใหม่: ตัดส่วนที่เขียนซ้ำออกและจัดปีกกาให้ถูก
+    // ✨ ส่วนที่แก้ใหม่: จัดเงื่อนไขให้ถูกต้อง ไม่ซ้อนกัน
     if (type === 'all' || type === 'font') {
         baseProducts = products;
     } else if (type === 'recommended') {
@@ -95,13 +95,17 @@ function viewCategory(type, title) {
     } else if (type === 'brush') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
+        // สำหรับหมวดย่อยจาก Hamburger Menu
         const tagMap = { 
             'head': 'ฟอนต์หัวข้อ', 
             'body': 'ฟอนต์เนื้อหา', 
             'emoji': 'ฟอนต์อิโมจิ', 
             'watermark': 'ลายน้ำ', 
             'bg': 'BG', 
-            'decoration': 'ไฟล์ตกแต่ง' 
+            'decoration': 'ไฟล์ตกแต่ง',
+            'brush-ibis': 'อื่น ๆ',
+            'brush-pro': 'อื่น ๆ',
+            'sticker': 'อื่น ๆ'
         };
         const targetTag = tagMap[type] || type;
         baseProducts = products.filter(p => p.tags && p.tags.includes(targetTag));
