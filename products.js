@@ -194,7 +194,7 @@ const banners = [
 		{ id: 'cat_watermark', name: 'ลายน้ำ', products: [ 
             { id: 'wm_01', name: 'Set ลายน้ำมินิมอล 01', price: 39, img: 'https://img2.pic.in.th/wm_example1.png', tags: ['ลายน้ำ'], isRecommend: true },
             { id: 'wm_02', name: 'Set ลายน้ำพาสเทล 02', price: 39, img: 'https://img2.pic.in.th/wm_example2.png', tags: ['ลายน้ำ'] }
-        }, // <--- ปิดเครือลายน้ำ
+        ]}, // <--- ปิดเครือลายน้ำ
 
 // เปลี่ยนจาก: หมวดบรัชและของตกแต่ง
 // เป็นชื่อที่ไม่มีคำว่า "ตกแต่ง" หรือ "อื่น ๆ" เช่น:
