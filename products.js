@@ -195,7 +195,14 @@ const banners = [
             { id: 'wm_01', name: 'Set ลายน้ำมินิมอล 01', price: 39, img: 'https://img2.pic.in.th/wm_example1.png', tags: ['ลายน้ำ'], isRecommend: true },
             { id: 'wm_02', name: 'Set ลายน้ำพาสเทล 02', price: 39, img: 'https://img2.pic.in.th/wm_example2.png', tags: ['ลายน้ำ'] }
         ]}, // <--- ปิดเครือลายน้ำ
-
+// เพิ่มต่อจากเครือฟอนต์ หรือก่อนหน้า cat_watermark ก็ได้ค่ะ
+{ id: 'cat_group', name: '💎 กลุ่มฟอนต์ & ไฟล์ตกแต่ง', products: [
+    { 
+        id: 'group_01', name: 'กลุ่ม VIP องุ่นหวาน', price: 599, detail: 'เข้ากลุ่มรับฟอนต์ทุกเครือ + ของตกแต่งไม่อั้น!', 
+        img: 'https://...', tags: ['กลุ่ม'], // ✨ ใช้ Tag ว่า 'กลุ่ม' เพื่อแยกออกจากหมวดอื่น
+		isRecommend: true 
+    }
+]},
 // เปลี่ยนจาก: หมวดบรัชและของตกแต่ง
 // เป็นชื่อที่ไม่มีคำว่า "ตกแต่ง" หรือ "อื่น ๆ" เช่น:
         { id: 'cat_brush', name: '🖌️ บรัช iBisPaint', products: [ 
