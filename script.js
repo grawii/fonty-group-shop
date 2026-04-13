@@ -87,10 +87,13 @@ function viewCategory(type, title) {
     // ... (ส่วนการเลือก baseProducts เหมือนเดิมที่คุณองุ่นมี) ...
     if (type === 'all' || type === 'font') {
         baseProducts = products;
+    if (type === 'all' || type === 'font') {
+        baseProducts = products;
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
-// ตรงฟังก์ชัน viewCategory
-} else if (type === 'group') {
+    } else if (type === 'group') { // ✨ เช็กให้แน่ใจว่ามี } ปิดข้างบนก่อนเริ่ม else if อันนี้
+        baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
+    } else if (type === 'brush') {
     // ✨ แก้ให้ดึงเฉพาะ Tag 'กลุ่ม' เท่านั้น สินค้า BG กับ ไฟล์ตกแต่ง จะได้ไม่มาปน
     baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
     } else if (type === 'brush') {
@@ -199,18 +202,19 @@ function renderHomeContent() {
     if (categorySection) {
         const cats = [
             { id: 'all', name: 'ฟอนต์ทั้งหมด', icon: 'type', navIdx: 1 },
-            { id: 'group', name: 'กลุ่ม & ไฟล์ตกแต่ง', icon: 'users', navIdx: 2 },
+            { id: 'group', name: 'กลุ่มฟอนต์ & ของตกแต่ง', icon: 'users', navIdx: 2 }, // ✨ แก้ชื่อให้ตรง
             { id: 'brush', name: 'บรัช & อื่นๆ', icon: 'paintbrush', navIdx: 3 }
         ];
         categorySection.innerHTML = cats.map(cat => {
-const filtered = cat.id === 'all' 
-    ? products 
-    : products.filter(p => {
-// หาบรรทัดที่เช็ก cat.id === 'group'
-        if (cat.id === 'group') return p.tags && p.tags.includes('กลุ่ม');
-        if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
-        return false;
-    });
+            const filtered = cat.id === 'all' 
+                ? products 
+                : products.filter(p => {
+                    // ✨ แก้จุดนี้: ให้ดึงจาก Tag 'กลุ่ม' เท่านั้น
+                    if (cat.id === 'group') return p.tags && p.tags.includes('กลุ่ม');
+                    if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
+                    return false;
+                });
+                
             if (filtered.length === 0) return '';
             return `
                 <div class="space-y-4 mb-10">
