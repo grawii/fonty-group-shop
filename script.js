@@ -91,7 +91,7 @@ function viewCategory(type, title) {
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
     } else if (type === 'group') {
-        baseProducts = products.filter(p => p.tags && p.tags.includes('กลุ่ม'));
+        baseProducts = products.filter(p => p.tags && p.tags.includes('group'));
     } else if (type === 'brush') {
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
@@ -208,7 +208,7 @@ function renderHomeContent() {
     if (categorySection) {
         const cats = [
             { id: 'all', name: 'ฟอนต์ทั้งหมด', icon: 'type', navIdx: 1 },
-            { id: 'group', name: 'กลุ่มฟอนต์ & ของตกแต่ง', icon: 'users', navIdx: 2 }, // ✨ แก้ชื่อให้ตรง
+            { id: 'group', name: 'กลุ่มฟอนต์ & ของตกแต่ง', icon: 'users', navIdx: 2 }, // ✨ เปลี่ยนจาก 2 เป็น 2 (เช็กให้ตรงกับตำแหน่ง Groups ใน Nav)
             { id: 'brush', name: 'บรัช & อื่นๆ', icon: 'paintbrush', navIdx: 3 }
         ];
         categorySection.innerHTML = cats.map(cat => {
@@ -216,7 +216,7 @@ function renderHomeContent() {
                 ? products 
                 : products.filter(p => {
                     // ✨ แก้จุดนี้: ให้ดึงจาก Tag 'กลุ่ม' เท่านั้น
-                    if (cat.id === 'group') return p.tags && p.tags.includes('กลุ่ม');
+                    if (cat.id === 'group') return p.tags && p.tags.includes('group');
                     if (cat.id === 'brush') return p.tags && p.tags.includes('อื่น ๆ');
                     return false;
                 });
