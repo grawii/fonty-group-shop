@@ -1,0 +1,100 @@
+body {
+    background: linear-gradient(135deg, #fff9fb 0%, #fcecf2 100%);
+    font-family: 'Prompt', sans-serif;
+}
+
+/* Animations */
+@keyframes float-up-down { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-15px); } }
+@keyframes dash-animation { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -24; } }
+@keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+@keyframes slideRight { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+
+.anim-float-1 { animation: float-up-down 4s ease-in-out infinite; }
+.animate-dash { animation: dash-animation 1s linear infinite; }
+.animate-slideRight { animation: slideRight 0.3s ease-out forwards; }
+
+/* Marquee Style */
+.marquee-wrapper {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 192, 203, 0.3);
+}
+@keyframes marquee { 
+    0% { transform: translateX(100%); } 
+    100% { transform: translateX(-100%); } 
+}
+.marquee-content { 
+    display: inline-block; 
+    white-space: nowrap; 
+    animation: marquee 15s linear infinite; 
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 0 20px 50px -10px rgba(244, 114, 182, 0.15);
+}
+
+.menu-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ef4444;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+}
+
+.banner-slider {
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    overflow-x: auto;
+}
+.banner-slider::-webkit-scrollbar { display: none; }
+
+.product-card {
+    background: white;
+    border-radius: 28px;
+    padding: 10px;
+    border: 1px solid #ffe0ec;
+    transition: 0.3s;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: #bc9680;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.nav-item.active { color: #ff66a0; transform: translateY(-3px); }
+
+input[type="file"]::file-selector-button {
+    background: #ff66a0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
