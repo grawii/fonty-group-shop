@@ -84,29 +84,17 @@ function viewCategory(type, title) {
     catDiv.className = "space-y-10 w-full"; 
 
     let baseProducts = [];
+    // ... (ส่วนการเลือก baseProducts เหมือนเดิมที่คุณองุ่นมี) ...
     if (type === 'all' || type === 'font') {
         baseProducts = products;
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
     } else if (type === 'group') {
-        // ✨ ดึงทั้งไฟล์ตกแต่ง และ BG มาโชว์ในหมวดกลุ่ม
         baseProducts = products.filter(p => p.tags && (p.tags.includes('ไฟล์ตกแต่ง') || p.tags.includes('BG')));
     } else if (type === 'brush') {
-        // ✨ ดึงสินค้าที่มี Tag 'อื่น ๆ' (ต้องมีช่องว่างตาม products.js)
         baseProducts = products.filter(p => p.tags && p.tags.includes('อื่น ๆ'));
     } else {
-        // ✨ ดึงตาม Tag ที่ส่งมาตรงๆ (เช่น ลายน้ำ, ฟอนต์หัวข้อ)
-        const tagMap = {
-            'head': 'ฟอนต์หัวข้อ',
-            'body': 'ฟอนต์เนื้อหา',
-            'emoji': 'ฟอนต์อิโมจิ',
-            'watermark': 'ลายน้ำ',
-            'bg': 'BG',
-            'decoration': 'ไฟล์ตกแต่ง',
-            'brush-ibis': 'อื่น ๆ',
-            'brush-pro': 'อื่น ๆ',
-            'sticker': 'อื่น ๆ'
-        };
+        const tagMap = { 'head': 'ฟอนต์หัวข้อ', 'body': 'ฟอนต์เนื้อหา', 'emoji': 'ฟอนต์อิโมจิ', 'watermark': 'ลายน้ำ', 'bg': 'BG', 'decoration': 'ไฟล์ตกแต่ง' };
         const targetTag = tagMap[type] || type;
         baseProducts = products.filter(p => p.tags && p.tags.includes(targetTag));
     }
@@ -123,9 +111,7 @@ function viewCategory(type, title) {
         const networkHeader = `
             <div class="network-group space-y-6">
                 <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
-                    <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">
-                        ${networkName}
-                    </h2>
+                    <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">${networkName}</h2>
                 </div>
                 <div id="items-${networkName.replace(/\s+/g, '')}" class="space-y-8"></div>
             </div>
@@ -138,6 +124,10 @@ function viewCategory(type, title) {
         subCatsInNetwork.forEach(subName => {
             const subItems = networkItems.filter(p => p.tags && p.tags.includes(subName));
             if (subItems.length > 0) {
+                // ✨ จุดสำคัญ: ใช้ .slice(0, 4) เพื่อโชว์แค่ 4 ชิ้นแรก
+                const displayItems = subItems.slice(0, 4); 
+                const hasMore = subItems.length > 4; // เช็กว่ามีมากกว่า 4 ไหม
+
                 const subSection = `
                     <div class="sub-category space-y-4">
                         <div class="flex items-center justify-between px-2">
@@ -145,13 +135,14 @@ function viewCategory(type, title) {
                                 <i data-lucide="folder" class="w-3.5 h-3.5 text-purple-400"></i>
                                 <span class="text-[11px] font-black text-purple-500 uppercase">หมวด ${subName}</span>
                             </div>
+                            ${hasMore ? `
                             <button onclick="viewSubCategory('${networkName}', '${subName}')" 
                                 class="text-[9px] font-black text-purple-500 bg-white border-2 border-purple-100 px-3 py-1.5 rounded-2xl shadow-sm active:scale-90 transition-all hover:bg-purple-50">
-                                ดูเพิ่มเติม ✨
-                            </button>
+                                ดูทั้งหมด (${subItems.length}) ✨
+                            </button>` : ''}
                         </div>
                         <div class="grid grid-cols-2 gap-4 px-1">
-                            ${subItems.map(p => createHTML(p)).join('')}
+                            ${displayItems.map(p => createHTML(p)).join('')}
                         </div>
                     </div>
                 `;
@@ -160,7 +151,7 @@ function viewCategory(type, title) {
         });
     });
     lucide.createIcons();
-	 initProductSliders();
+    initProductSliders();
 }
 
 function renderContactInfo() {
