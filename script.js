@@ -84,8 +84,13 @@ function viewCategory(type, title) {
     catDiv.className = "flex flex-col gap-y-10 w-full pb-20"; 
 
     let baseProducts = [];
+    
     if (type === 'all' || type === 'font') {
-        baseProducts = products;
+        // ✨ กรองเอาเฉพาะสินค้าที่เป็น "ฟอนต์" จริงๆ (ไม่มี Tag หมวดอื่นปน)
+        const nonFontTags = ['ลายน้ำ', 'group', 'อื่น ๆ', 'ไฟล์ตกแต่ง', 'BG'];
+        baseProducts = products.filter(p => {
+            return !p.tags.some(tag => nonFontTags.includes(tag));
+        });
     } else if (type === 'recommended') {
         baseProducts = products.filter(p => p.isRecommended);
     } else if (type === 'group') {
