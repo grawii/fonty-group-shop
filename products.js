@@ -190,8 +190,7 @@ const banners = [
             { id: 'ms3', name: 'Feather (LKT Feather)', price: 99, oldPrice: 159, detail: 'รวมชพณ.', img: 'https://img2.pic.in.th/-530_20260226002912.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ms4', name: 'Bagie (LKT Bagie)', price: 79, oldPrice: 129, detail: 'แถมคลิปสอนแต่งหัวป้ายแถมให้‼️', img: ['https://img2.pic.in.th/-587_20260310181031.png', 'https://img1.pic.in.th/images/-589_20260310175521.png'], tags: ['ฟอนต์เนื้อหา'] }
         ]}, // <--- องุ่นใส่ปีกกาปิดเครือที่ 14 ให้แล้ว
-
-        { id: 'cat_watermark', name: '🎨 รวมลายน้ำ', products: [
+//watermark
             { id: 'wm_01', name: 'Set ลายน้ำมินิมอล 01', price: 39, img: 'https://img2.pic.in.th/wm_example1.png', tags: ['ลายน้ำ'], isRecommend: true },
             { id: 'wm_02', name: 'Set ลายน้ำพาสเทล 02', price: 39, img: 'https://img2.pic.in.th/wm_example2.png', tags: ['ลายน้ำ'] }
         ]}, // <--- ปิดเครือลายน้ำ
