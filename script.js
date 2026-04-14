@@ -101,6 +101,7 @@ function viewCategory(type, title) {
     if (document.getElementById('mobile-menu').classList.contains('active')) toggleMenu();
     switchPage('category');
     document.getElementById('category-title').innerText = title;
+    document.getElementById('category-subtitle').innerText = '';
     
     const catDiv = document.getElementById('category-products');
     if (!catDiv) return;
