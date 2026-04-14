@@ -133,8 +133,8 @@ const banners = [
             { id: 'gmc11', name: 'ฮายเพอร่า (GMC HiPerra)', price: 89, oldPrice: 199, detail: 'รวมชพณ.', img: ['https://img2.pic.in.th/186D1697-BC78-4B4D-BA03-E4F506764A71.jpeg'], tags: ['ฟอนต์หัวข้อ'] }
         ]},
 		    { id: 'cat10', name: 'ฟอนต์เครือ Kirakira', products: [
-            { id: 'kr1', name: 'ลูน่าคาวี (Kirakira LunaKavi)', price: 159, detail: 'รวมชพณ.,isRecommend : true, badge: {text: 'Recommend', type: 'red'},img: 'https://img1.pic.in.th/images/eecba2712e41e16bbec246feecbc7f4a.png', tags: ['ฟอนต์เนื้อหา'] },
-            { id: 'kr2', name: 'ลูน่าโบริ (Kirakira LunaBori)', price: 159, detail: 'รวมชพณ.',isRecommend : true,badge: {text: 'Recommend', type: 'red'}, img: ' https://img2.pic.in.th/26c57b732041e40d578ff5308a77bc1a.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr1', name: 'ลูน่าคาวี (Kirakira LunaKavi)', price: 159, detail: 'รวมชพณ.',isRecommend : true, badge: {text: 'Recommend', type: 'red'},img: 'https://img1.pic.in.th/images/eecba2712e41e16bbec246feecbc7f4a.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'kr2', name: 'ลูน่าโบริ (Kirakira LunaBori)', price: 159, detail: 'รวมชพณ.',isRecommend : true,badge: {text: 'Recommend', type: 'red'}, img: 'https://img2.pic.in.th/26c57b732041e40d578ff5308a77bc1a.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kr3', name: 'ลูน่าโอริน (Kirakira LunaOrin)', price: 159, detail: 'รวมชพณ.', img: 'https://img1.pic.in.th/images/edb5f6a06618469d80623f979bd236fb.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kr4', name: 'ลูน่าซารี่ (Kirakira LunaZarie)', price: 159, detail: 'รวมชพณ.', img: 'https://img2.pic.in.th/344689054055e368b23139b1ae6965e8.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kr5', name: 'ลูน่าอามิน (Kirakira LunaAmin)', price: 159, detail: 'รวมชพณ.', img: 'https://img1.pic.in.th/images/ffb91f2671b037b5302248db5527ab8b.png', tags: ['ฟอนต์เนื้อหา'] },
