@@ -65,19 +65,19 @@ function viewSubCategory(network, subName) {
 
     if (subName === 'group') {
         backType = 'group';
-        backText = 'ย้อนกลับไปหน้ารวมกลุ่ม';
+        backText = 'All Groups'; // ✨ แก้จาก 'ย้อนกลับไป...' เป็นชื่อหมวดสั้นๆ
     } else if (subName === 'อื่น ๆ') {
         backType = 'brush';
-        backText = 'ย้อนกลับไปหน้ารวม Etc.';
+        backText = 'Etc. / Brushes';
     } else if (subName === 'ลายน้ำ') {
         backType = 'watermark';
-        backText = 'ย้อนกลับไปหน้าลายน้ำ';
+        backText = 'Watermark';
     } else if (subName === 'BG') {
         backType = 'bg';
-        backText = 'ย้อนกลับไปหน้า BG';
+        backText = 'Backgrounds';
     } else if (subName === 'ไฟล์ตกแต่ง') {
         backType = 'decoration';
-        backText = 'ย้อนกลับไปหน้าไฟล์ตกแต่ง';
+        backText = 'Decoration';
     }
 
     catDiv.innerHTML = `
@@ -101,7 +101,7 @@ function viewCategory(type, title) {
     if (document.getElementById('mobile-menu').classList.contains('active')) toggleMenu();
     switchPage('category');
     document.getElementById('category-title').innerText = title;
-    document.getElementById('category-subtitle').innerText = '';
+    document.getElementById('category-subtitle').innerText = 'Explore our products'; 
     
     const catDiv = document.getElementById('category-products');
     if (!catDiv) return;
