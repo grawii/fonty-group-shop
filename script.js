@@ -112,7 +112,6 @@ function viewCategory(type, title) {
     let baseProducts = [];
     
     if (type === 'all' || type === 'font') {
-        // ✨ กรองเอาเฉพาะสินค้าที่เป็น "ฟอนต์" จริงๆ (ไม่มี Tag หมวดอื่นปน)
         const nonFontTags = ['ลายน้ำ', 'group', 'อื่น ๆ', 'ไฟล์ตกแต่ง', 'BG'];
         baseProducts = products.filter(p => {
             return !p.tags.some(tag => nonFontTags.includes(tag));
@@ -142,8 +141,6 @@ function viewCategory(type, title) {
 
     Object.keys(groupedByNetwork).forEach(networkName => {
         const networkItems = groupedByNetwork[networkName];
-        
-        // ✨ จุดสำคัญ 1: สร้าง ID แบบใช้ขีดแทนช่องว่าง
         const cleanId = networkName.replace(/\s+/g, '-');
         
         const networkHeaderHTML = `
@@ -155,7 +152,6 @@ function viewCategory(type, title) {
             </div>`;
         catDiv.insertAdjacentHTML('beforeend', networkHeaderHTML);
 
-        // ✨ จุดสำคัญ 2: ดึง ID ตัวเดิมมาใช้สินค้าเข้าตะกร้า
         const networkContainer = document.getElementById(`items-${cleanId}`);
         const subCatsInNetwork = ['ฟอนต์หัวข้อ', 'ฟอนต์เนื้อหา', 'ฟอนต์อิโมจิ', 'ลายน้ำ', 'BG', 'ไฟล์ตกแต่ง', 'อื่น ๆ', 'group'];
         
@@ -186,6 +182,33 @@ function viewCategory(type, title) {
             }
         });
     });
+
+    // ✨ ส่วนที่คุณองุ่นต้องการ: สั่งให้แถบ Nav เลื่อนตามอัตโนมัติ
+    const navItems = document.querySelectorAll('.nav-item');
+    let targetIdx = -1;
+
+    // เช็กประเภทเพื่อกำหนดปุ่มในแถบเมนู (0=Home, 1=Fonts, 2=Groups, 3=Etc.)
+    if (['all', 'font', 'head', 'body', 'emoji'].includes(type)) {
+        targetIdx = 1; // ไปที่เมนู Fonts
+    } else if (type === 'group') {
+        targetIdx = 2; // ไปที่เมนู Groups
+    } else if (['brush', 'brush-ibis', 'brush-pro', 'sticker'].includes(type)) {
+        targetIdx = 3; // ไปที่เมนู Etc.
+    }
+
+    // สั่งขยับ Active และวงกลมสีขาว (Indicator)
+    if (targetIdx !== -1) {
+        navItems.forEach(item => item.classList.remove('active'));
+        const targetEl = navItems[targetIdx];
+        if (targetEl) {
+            targetEl.classList.add('active');
+            const indicator = document.getElementById('nav-indicator');
+            if (indicator) {
+                const centerX = targetEl.offsetLeft + (targetEl.offsetWidth / 2) - (indicator.offsetWidth / 2);
+                indicator.style.left = `${centerX}px`;
+            }
+        }
+    }
 
     lucide.createIcons();
     initProductSliders();
