@@ -42,7 +42,7 @@ function switchPage(pageId) {
     const target = document.getElementById(`section-${pageId}`); 
     if(target) target.classList.remove('hidden');
     if(pageId === 'contact') renderContactInfo();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
     lucide.createIcons();
 }
 
@@ -70,7 +70,7 @@ function viewSubCategory(network, subName) {
     lucide.createIcons();
     initProductSliders();
     setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'auto' });
     }, 100); 
 }
 
