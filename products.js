@@ -5,7 +5,7 @@ const promotions = [
 ];
 
 const banners = [
-    "https://img1.pic.in.th/images/IMG_4864.gif"
+    "https://img1.pic.in.th/images/IMG_4872.gif"
 ];
 
 // 2. ส่วนข้อมูลหมวดหมู่ (วางโค้ด categories ยาวๆ ที่คุณองุ่นเตรียมไว้ตรงนี้)
@@ -151,7 +151,7 @@ const banners = [
             { id: 'ptt4', name: 'Mushroom (Potato Mushroom)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img2.pic.in.th/IMG_2751fe9f5f5748e80809.jpeg', tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt5', name: 'Sticker (Potato Sticker)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: ['https://img2.pic.in.th/1309D4B8-E9E0-47C7-AEE0-D69AD961B492.jpeg','https://img1.pic.in.th/images/F62DA315-B8E0-49B3-9D04-C5A61463DF98.jpeg'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt6', name: 'ฟักทอง (Potato Pumpkin)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/87F4728A-F516-4808-9DE1-1470C82BA54A.jpeg','https://img1.pic.in.th/images/BB5ED9E8-E6A0-497F-A289-3CD035D71186.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
-            { id: 'ptt7', name: 'ถ้วยฟู (Potato Thuaifu)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/96BA85B1-A079-4FED-A553-F2C31344A354.jpeg','https://img2.pic.in.th/96BA85B1-A079-4FED-A553-F2C31344A354.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt7', name: 'ถ้วยฟู (Potato Thuaifu)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/96BA85B1-A079-4FED-A553-F2C31344A354.jpeg','https://img1.pic.in.th/images/AFAD50B1-5154-4F3E-B8DF-9D446C21C6BD.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt8', name: 'กล้วย (Potato Banana)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img1.pic.in.th/images/29120EC0-05B6-4E50-81A2-EA0B02513161.jpeg','https://img2.pic.in.th/3B1F9370-2EA6-4439-A918-962C25B09E15.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt9', name: 'ลูกชุบ (Potato Lookchoup)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/5465EB8E-F902-40E0-803F-B5AEB607FBD0.jpeg','https://img1.pic.in.th/images/3FCA8BB6-3E33-49DE-8496-C01054635E06.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt10', name: 'บัวลอย (Potato Bualoi)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img1.pic.in.th/images/68EEF3FD-EED4-4555-A5A8-B4349DA0F572.jpeg','https://img1.pic.in.th/images/CB8DB91D-292E-47F1-9E50-B23F5EC1B92A.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
@@ -159,7 +159,7 @@ const banners = [
             { id: 'ptt12', name: 'Star (Potato Star)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img1.pic.in.th/images/IMG_2747.jpeg', tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt13', name: 'Cloud (Potato Cloud)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img1.pic.in.th/images/IMG_2746b5bf71975be29800.jpeg', tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt14', name: 'Night (Potato Night)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img2.pic.in.th/IMG_274518ad72be4296d3ae.jpeg', tags: ['ฟอนต์หัวข้อ'] },
-            { id: 'ptt15', name: 'Princess (Potato Princess)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img2.pic.in.th/IMG_2744f8f9da5a0dd22944.jpeg', tags: ['ฟอนต์หัวข้อ'] },
+            { id: 'ptt15', name: 'Princess (Potato Princess)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img1.pic.in.th/images/IMG_4873.jpeg', tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt16', name: 'Fairy (Potato Fairy)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img2.pic.in.th/IMG_2744f8f9da5a0dd22944.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt17', name: 'Saimai (Potato Saimai)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: ['https://img1.pic.in.th/images/7AF33E7E-ABF3-4E19-A598-5407A9CD259B.jpeg','https://img1.pic.in.th/images/FB227250-71A4-4737-B60D-3FA2F8C23248.jpeg'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt18', name: 'เมล่อน (Potato Melon)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/0F45FA07-E35F-4D50-9437-16C33DFA4CC0.jpeg','https://img1.pic.in.th/images/8359E72E-340D-4F03-8489-B083A3BDD48E.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
@@ -167,7 +167,15 @@ const banners = [
             { id: 'ptt20', name: 'Rabbit (Potato Rabbit)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: ['https://img1.pic.in.th/images/89C001ED-DFAF-439D-B2BB-30B48264FD04.jpeg','https://img2.pic.in.th/E9C3FE03-6B89-4EE4-A0F9-7464AF086DA3.jpeg'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt21', name: 'Kradum (Potato Kradum)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: ['https://img2.pic.in.th/759B7A08-18DF-4A8B-8E4D-378FD5E4BA00.jpeg','https://img1.pic.in.th/images/7DA946F8-195A-4007-98B2-749482B10BBF.jpeg'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ptt22', name: 'Bear (Potato Bear)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: ['https://img1.pic.in.th/images/D0D99E35-B034-460F-9653-B5987B65F0A5.jpeg','https://img2.pic.in.th/13090301-671C-4B18-A8A3-D9E8955D6977.jpeg'], tags: ['ฟอนต์หัวข้อ'] },
-            { id: 'ptt23', name: 'Mushroom (Potato Mushroom)', price: 99, oldPrice: 129, detail: 'มีแค่ภาษาอังกฤษ', img: 'https://img2.pic.in.th/IMG_2751fe9f5f5748e80809.jpeg', tags: ['ฟอนต์หัวข้อ'] }
+            { id: 'ptt23', name: 'เป็ด (Potato Duck)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/EBF0F7C3-E527-4BF3-86AA-6F5F4AD21F56.jpeg','https://img1.pic.in.th/images/727A9C18-F102-4BCC-AD81-A0F300266952.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt24', name: 'ซูชิ (Potato Sushi)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/44579910-B1B1-4440-8250-FC4090BECB64.jpeg','https://img2.pic.in.th/943EA78C-C65A-402D-AFE2-F5FB279E0916.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt25', name: 'คุกกี้ (Potato Cookie)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/A969714B-9402-4A22-88B4-340A9525E4FD.jpeg','https://img1.pic.in.th/images/1EC0A5B6-409F-41C3-857B-57BFCCED6AA9.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt26', name: 'โน้ต (Potato Note)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/05C8A0D6-D622-4813-A1EB-9FF337563768.jpeg','https://img1.pic.in.th/images/DE3BA801-7CFA-4EFB-A29A-6A64A4BD8D9B.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt27', name: 'นม (Potato Milk)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/1D70AF22-4B50-45C1-B45D-3D710DCC19AD.jpeg','https://img2.pic.in.th/60E8DB15-C74E-457C-8CC9-A3B1D0112155.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt28', name: 'ดอนกี้ (Potato Donkey)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img1.pic.in.th/images/C1F4D0C7-E440-41E2-9D8F-B82A1C3CE7D2.jpeg','https://img1.pic.in.th/images/E31D9780-C72B-44A2-B695-EA342DB9A94D.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt29', name: 'พลูโต (Potato Pluto)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img1.pic.in.th/images/894B589A-66D0-44AE-9360-0F428F72A686.jpeg','https://img2.pic.in.th/3C422A6F-8D70-422E-9458-37F3F9AEF642.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt30', name: 'แคนดี้ (Potato Candy)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img1.pic.in.th/images/864C3105-51EB-4B47-9829-743385C87C48.jpeg','https://img1.pic.in.th/images/F4A7211C-29FA-425A-9268-0E981211BA6C.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'ptt31', name: 'เลิฟลี่ (Potato Lovely)', price: 69, detail: 'ราคารวมใช้งานส่วนตัวและเชิงพาณิชย์', img: ['https://img2.pic.in.th/8124EC0F-1200-4ABD-A02E-3EED01CB675F.jpeg','https://img2.pic.in.th/095137C7-110D-4350-9677-5AA2FE2C70E9.jpeg'], tags: ['ฟอนต์เนื้อหา'] },
         ]},
         { id: 'cat12', name: 'ฟอนต์เครือ KT', products: [
             { id: 'kt1', name: 'บัลเดอร์ (AM Balder)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/06E02B71-90EC-4ABB-B1D5-B16D571E69A1.jpeg', tags: ['ฟอนต์เนื้อหา'] },
