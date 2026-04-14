@@ -59,16 +59,39 @@ function viewSubCategory(network, subName) {
     
     const filtered = products.filter(p => p.categoryName === network && p.tags && p.tags.includes(subName));
     
+    // ✨ ส่วนตัดสินใจว่าปุ่ม "ย้อนกลับ" จะพาไปไหน
+    let backType = 'all'; 
+    let backText = 'ย้อนกลับไปดูทุกเครือ';
+
+    if (subName === 'group') {
+        backType = 'group';
+        backText = 'ย้อนกลับไปหน้ารวมกลุ่ม';
+    } else if (subName === 'อื่น ๆ') {
+        backType = 'brush';
+        backText = 'ย้อนกลับไปหน้ารวม Etc.';
+    } else if (subName === 'ลายน้ำ') {
+        backType = 'watermark';
+        backText = 'ย้อนกลับไปหน้าลายน้ำ';
+    } else if (subName === 'BG') {
+        backType = 'bg';
+        backText = 'ย้อนกลับไปหน้า BG';
+    } else if (subName === 'ไฟล์ตกแต่ง') {
+        backType = 'decoration';
+        backText = 'ย้อนกลับไปหน้าไฟล์ตกแต่ง';
+    }
+
     catDiv.innerHTML = `
         <div class="col-span-2 mb-2">
-            <button onclick="viewCategory('all', 'Fonts')" class="flex items-center gap-2 text-[11px] font-black text-purple-400 bg-purple-50 px-4 py-2 rounded-2xl border border-purple-100 w-fit active:scale-95 transition-all">
-                <i data-lucide="chevron-left" class="w-4 h-4"></i> ย้อนกลับไปดูทุกเครือ
+            <button onclick="viewCategory('${backType}', '${backText}')" class="flex items-center gap-2 text-[11px] font-black text-purple-400 bg-purple-50 px-4 py-2 rounded-2xl border border-purple-100 w-fit active:scale-95 transition-all">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i> ${backText}
             </button>
         </div>
         ${filtered.map(p => createHTML(p)).join('')}
     `;
+    
     lucide.createIcons();
     initProductSliders();
+
     setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'auto' });
     }, 100); 
