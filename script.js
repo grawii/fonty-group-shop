@@ -50,7 +50,6 @@ function switchPage(pageId) {
 
 // ✨ ฟังก์ชันแยกเครือแบบเจาะจง (ทำงานเมื่อกด "ดูเพิ่มเติม")
 function viewSubCategory(network, subName) {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); 
     switchPage('category');
     document.getElementById('category-title').innerText = network;
     document.getElementById('category-subtitle').innerText = `หมวด ${subName}`;
@@ -70,6 +69,9 @@ function viewSubCategory(network, subName) {
     `;
     lucide.createIcons();
     initProductSliders();
+    setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100); 
 }
 
 function viewCategory(type, title) {
