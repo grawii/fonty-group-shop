@@ -55,38 +55,36 @@ function viewSubCategory(network, subName) {
     document.getElementById('category-subtitle').innerText = `หมวด ${subName}`;
     
     const catDiv = document.getElementById('category-products');
-    catDiv.className = "grid grid-cols-2 gap-4"; 
+    catDiv.innerHTML = '';
+    catDiv.className = "flex flex-col gap-y-10 w-full pb-20"; 
     
     const filtered = products.filter(p => p.categoryName === network && p.tags && p.tags.includes(subName));
     
-    // ✨ ส่วนตัดสินใจว่าปุ่ม "ย้อนกลับ" จะพาไปไหน
     let backType = 'all'; 
-    let backText = 'ย้อนกลับไปดูทุกเครือ';
+    let backText = 'Fonts';
+    if (subName === 'group') { backType = 'group'; backText = 'Groups'; }
+    else if (subName === 'อื่น ๆ') { backType = 'brush'; backText = 'Etc. / Brushes'; }
+    else if (subName === 'ลายน้ำ') { backType = 'watermark'; backText = 'Watermark'; }
+    else if (subName === 'BG') { backType = 'bg'; backText = 'Backgrounds'; }
+    else if (subName === 'ไฟล์ตกแต่ง') { backType = 'decoration'; backText = 'Decoration'; }
 
-    if (subName === 'group') {
-        backType = 'group';
-        backText = 'All Groups'; // ✨ แก้จาก 'ย้อนกลับไป...' เป็นชื่อหมวดสั้นๆ
-    } else if (subName === 'อื่น ๆ') {
-        backType = 'brush';
-        backText = 'Etc. / Brushes';
-    } else if (subName === 'ลายน้ำ') {
-        backType = 'watermark';
-        backText = 'Watermark';
-    } else if (subName === 'BG') {
-        backType = 'bg';
-        backText = 'Backgrounds';
-    } else if (subName === 'ไฟล์ตกแต่ง') {
-        backType = 'decoration';
-        backText = 'Decoration';
-    }
-
+    // ✨ ไอวี่เพิ่มหัวข้อเครือข่าย (วงสีเขียว) เข้ามาในหน้านี้ให้แล้วค่ะ
     catDiv.innerHTML = `
-        <div class="col-span-2 mb-2">
-            <button onclick="viewCategory('${backType}', '${backText}')" class="flex items-center gap-2 text-[11px] font-black text-purple-400 bg-purple-50 px-4 py-2 rounded-2xl border border-purple-100 w-fit active:scale-95 transition-all">
-                <i data-lucide="chevron-left" class="w-4 h-4"></i> ${backText}
-            </button>
+        <div class="network-group flex flex-col gap-y-6">
+            <div class="px-2">
+                <button onclick="viewCategory('${backType}', '${backText}')" class="flex items-center gap-2 text-[11px] font-black text-purple-400 bg-purple-50 px-4 py-2 rounded-2xl border border-purple-100 w-fit active:scale-95 transition-all">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i> ย้อนกลับไปหน้าหลัก
+                </button>
+            </div>
+            
+            <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
+                <h2 class="text-lg font-black text-purple-900 uppercase tracking-normal">${network}</h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 px-1">
+                ${filtered.map(p => createHTML(p)).join('')}
+            </div>
         </div>
-        ${filtered.map(p => createHTML(p)).join('')}
     `;
     
     lucide.createIcons();
@@ -110,7 +108,6 @@ function viewCategory(type, title) {
     catDiv.className = "flex flex-col gap-y-10 w-full pb-20"; 
 
     let baseProducts = [];
-    
     if (type === 'all' || type === 'font') {
         const nonFontTags = ['ลายน้ำ', 'group', 'อื่น ๆ', 'ไฟล์ตกแต่ง', 'BG'];
         baseProducts = products.filter(p => {
@@ -146,7 +143,7 @@ function viewCategory(type, title) {
         const networkHeaderHTML = `
             <div class="network-group flex flex-col gap-y-6">
                 <div class="flex items-center gap-3 px-2 border-l-4 border-purple-500">
-                    <h2 class="text-lg font-black text-purple-900 uppercase tracking-tighter">${networkName}</h2>
+                    <h2 class="text-lg font-black text-purple-900 uppercase tracking-normal">${networkName}</h2>
                 </div>
                 <div id="items-${cleanId}" class="flex flex-col gap-y-8"></div>
             </div>`;
