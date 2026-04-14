@@ -140,7 +140,7 @@ const banners = [
             { id: 'kr5', name: 'โมจิปัง (GRP MochiPung)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/IMG_4604f4cbfa878d2d0190.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'kr6', name: 'เล่าเรื่อง (GRP StoryTelling)', price: 59, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)',badge: {text: 'New', type: 'red'}, img: 'https://img2.pic.in.th/Untitled82_20260325195517.png', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-		    { id: 'cat11', name: 'ฟอนต์เครือ Potato Bear', products: [
+		    { id: 'cat11', name: 'ฟอนต์เครือ Potato', products: [
             { id: 'ptt1', name: 'มนตรา (GRP Mantra)', price: 89, oldPrice: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', isRecommend : true, badge: {text: 'Recommend', type: 'red'}, img: 'https://img1.pic.in.th/images/IMG_4602.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt2', name: 'ไฮสคูล (GRP High School)', price: 129, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img2.pic.in.th/Untitled88_20260325211524.png', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ptt3', name: 'คุ๊กกี้ (GRP Cookie)', price: 39, oldPrice: 59, detail: 'มี 3 น้ำหนัก (ปกติ/หนา/บาง)', img: 'https://img1.pic.in.th/images/Untitled89_20260325213137.png', tags: ['ฟอนต์เนื้อหา'] },
@@ -184,7 +184,13 @@ const banners = [
             { id: 'cl6', name: 'เทียนหอม (AM Tianhom)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img1.pic.in.th/images/2A111247-4E6E-44D7-85D7-529D69471666.jpeg', tags: ['ฟอนต์เนื้อหา'] },
             { id: 'cl7', name: 'โอลิเวีย (AM Olivia)', price: 59, isPromo: true, detail: 'โปร 2 ฟอนต์ 100.-', img: 'https://img2.pic.in.th/4B64ED71-2998-458E-9EDE-9C2962DDE825.jpeg', tags: ['ฟอนต์เนื้อหา'] }
         ]},
-        { id: 'cat16', name: 'ฟอนต์เครือ MysissHouse', products: [
+        { id: 'cat16', name: 'ฟอนต์เครือ First', products: [
+            { id: 'f1', name: 'สวีทโฮม (First SweetHome)', price: 169, detail: 'รวมชพณ.', img: ['https://i.postimg.cc/6qh8Jcrc/E32F6A7F_ADC6_4DB7_BB18_B1A013389D09.jpg', 'https://i.postimg.cc/cCcvyhRc/FCB882FD_14F7_4341_BB5D_3CB178C7A220.jpg','https://i.postimg.cc/hv0XWsLj/066DD333_E18E_4122_A194_ECFF446D023D.jpg','https://i.postimg.cc/Gtj4wKFB/DA6AC0BA_C523_44B8_BB09_93F8CB68A029.jpg','https://i.postimg.cc/XqgrSLfF/6FB51F79_D977_45D3_AF3C_2A34DD65B85F.jpg'], tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'f2', name: 'Rochy (LKT Rochy)', price: 199, detail: 'มีคลิปสอนแต่งหัวป้ายแถมให้‼️', badge: {text: 'Recommend', type: 'red'}, img: ['https://img2.pic.in.th/-393_20260115175306.png', 'https://img1.pic.in.th/images/-393_20260115175819.png'], tags: ['ฟอนต์หัวข้อ'] },
+            { id: 'f3', name: 'Feather (LKT Feather)', price: 99, oldPrice: 159, detail: 'รวมชพณ.', img: 'https://img2.pic.in.th/-530_20260226002912.png', tags: ['ฟอนต์เนื้อหา'] },
+            { id: 'f4', name: 'Bagie (LKT Bagie)', price: 79, oldPrice: 129, detail: 'แถมคลิปสอนแต่งหัวป้ายแถมให้‼️', img: ['https://img2.pic.in.th/-587_20260310181031.png', 'https://img1.pic.in.th/images/-589_20260310175521.png'], tags: ['ฟอนต์เนื้อหา'] }
+        ]},
+        { id: 'cat17', name: 'ฟอนต์เครือ MysissHouse', products: [
             { id: 'ms1', name: 'Mochi Soft (LKT Mochi Soft)', price: 299, detail: 'มีคลิปสอนแต่งหัวป้ายแถมให้‼️', img: ['https://img1.pic.in.th/images/-458_20260206201301.png', 'https://img1.pic.in.th/images/-258_20251226180828.png'], tags: ['ฟอนต์เนื้อหา'] },
             { id: 'ms2', name: 'Rochy (LKT Rochy)', price: 199, detail: 'มีคลิปสอนแต่งหัวป้ายแถมให้‼️', badge: {text: 'Recommend', type: 'red'}, img: ['https://img2.pic.in.th/-393_20260115175306.png', 'https://img1.pic.in.th/images/-393_20260115175819.png'], tags: ['ฟอนต์หัวข้อ'] },
             { id: 'ms3', name: 'Feather (LKT Feather)', price: 99, oldPrice: 159, detail: 'รวมชพณ.', img: 'https://img2.pic.in.th/-530_20260226002912.png', tags: ['ฟอนต์เนื้อหา'] },
@@ -196,10 +202,10 @@ const banners = [
             { id: 'wm_02', name: 'Set ลายน้ำพาสเทล 02', price: 39, img: 'https://img2.pic.in.th/wm_example2.png', tags: ['ลายน้ำ'] }
         ]}, // <--- ปิดเครือลายน้ำ
 // เพิ่มต่อจากเครือฟอนต์ หรือก่อนหน้า cat_watermark ก็ได้ค่ะ
-{ id: 'cat_group', name: '💎 กลุ่มฟอนต์ & ไฟล์ตกแต่ง', products: [
+{ id: 'cat_group', name: 'รวมกลุ่ม/คอร์สสอน', products: [
     { 
-        id: 'group_01', name: 'กลุ่ม VIP องุ่นหวาน', price: 599, detail: 'เข้ากลุ่มรับฟอนต์ทุกเครือ + ของตกแต่งไม่อั้น!', 
-        img: 'https://img2.pic.in.th/-587_20260310181031.png', tags: ['group'], // ✨ ใช้ Tag ว่า 'กลุ่ม' เพื่อแยกออกจากหมวดอื่น
+        id: 'group_01', name: 'คอร์สสอนสร้างเ็บสไตล์พิ้งจู', price: 459, detail: 'ไม่มีพื้นฐานก็เรียนได้ มีโค้ดเทมเพลตให้!',  badge: {text: 'Hot', type: 'red'}, 
+        img: 'https://img2.pic.in.th/IMG_270981da8915120170bb.jpeg', tags: ['group'], // ✨ ใช้ Tag ว่า 'กลุ่ม' เพื่อแยกออกจากหมวดอื่น
 		isRecommend: true }
 ]},
 // เปลี่ยนจาก: หมวดบรัชและของตกแต่ง
@@ -214,12 +220,13 @@ const banners = [
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
-        { id: 'cat_stickerchat', name: '💬 สติ๊กเกอร์แชท', products: [ 
+        { id: 'cat_stickerchat', name: '💬 สติ๊กเกอร์แชท', products: [
                 { id: 'stk_01', name: 'สติ๊กเกอร์พี่จ่าง 01', price: 59, img: 'https://img2.pic.in.th/c468559163858e02c5d7de1a0e345dec.jpeg', tags: ['อื่น ๆ'] },
 				{ id: 'stk_02', name: 'สติ๊กเกอร์พี่จ่าง 02', price: 59, img: 'https://img1.pic.in.th/images/c6a681ee24e2fee4839a5bd04d17fd79.jpeg', tags: ['อื่น ๆ'] },
 				{ id: 'stk_03', name: 'สติ๊กเกอร์พี่จ่าง 03', price: 59, img: ['https://img2.pic.in.th/81c7ff5d2a6943b2a6bcb93bb46b9d8c.jpeg','https://img1.pic.in.th/images/879ffcc0fd9ee11f4a9ccd992eb2471d.jpeg'], tags: ['อื่น ๆ'] },
 				{ id: 'stk_04', name: 'สติ๊กเกอร์พี่จ่าง 04', price: 59, img: ['https://img1.pic.in.th/images/cfc66fd36dcade9c77182d5e0a328b48.jpeg','https://img2.pic.in.th/522d3ca24054361fa370034de121784e.jpeg'], tags: ['อื่น ๆ'] },
-				{ id: 'stk_05', name: 'สติ๊กเกอร์พี่จ่าง 05', price: 39, img: ['https://img2.pic.in.th/a799182e121ef3d2b3af2dab163352eb.jpeg','https://img1.pic.in.th/images/f37dd0d811bddce1ea4fc3598bb70406.jpeg'], tags: ['อื่น ๆ'] }
+				{ id: 'stk_05', name: 'สติ๊กเกอร์พี่จ่าง 05', price: 39, img: ['https://img2.pic.in.th/a799182e121ef3d2b3af2dab163352eb.jpeg','https://img1.pic.in.th/images/f37dd0d811bddce1ea4fc3598bb70406.jpeg'], tags: ['อื่น ๆ'] },
+                { id: 'stk_06', name: 'สติ๊กเกอร์พี่จ่าง 06', price: 59, img: ['https://img2.pic.in.th/9d3b78df2c98851684342375befee97f.jpeg'], tags: ['อื่น ๆ'] }
             ] 
         }, // <--- ต้องปิดก้ามปู ปิดปีกกา และใส่คอมม่าตรงนี้ก่อนเริ่มเครือใหม่!
 
